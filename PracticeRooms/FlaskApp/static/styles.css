@@ -1,0 +1,103 @@
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+  background-color: #b192dd;
+}
+
+.content {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff4a9;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px #3f4444;
+          box-shadow: 0 0 10px #3f4444;
+}
+
+.content h1 {
+  color: #4f2984;
+  text-align: center;
+}
+
+.content table {
+  table-layout: fixed;
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.content th {
+  padding: 10px;
+  border: 5px solid #4f2984;
+  background-color: #ffdd00;
+}
+
+.content td {
+  padding: 10px;
+  border: 5px solid #4f2984;
+  text-align: center;
+  font-weight: bold;
+}
+
+.content a {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 5px;
+  border-radius: 20px;
+  background-color: #4f2984;
+  color: #ffffff;
+  text-decoration: none;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+.content a:hover {
+  background-color: #b192dd;
+}
+
+.content button {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 5px;
+  border-radius: 20px;
+  background-color: #4f2984;
+  color: #ffffff;
+  text-decoration: none;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+}
+
+.content button:hover {
+  background-color: #b192dd;
+}
+
+.content p {
+  text-align: center;
+  font-size: 24px;
+  color: #4f2984;
+}
+
+.occupied-design {
+  background-color: lightcoral;
+}
+
+.vacant-design {
+  background-color: lightgreen;
+}
+
+.bordered-popup {
+  border: 5px solid #4f2984;
+  border-radius: 10px;
+}
+
+.confirm-button:hover {
+  background-color: #b192dd;
+}
+/*# sourceMappingURL=styles.css.map */

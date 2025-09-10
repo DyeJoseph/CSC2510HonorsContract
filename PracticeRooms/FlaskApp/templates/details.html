@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+{% block head %}
+<title>Room Details</title>
+{%endblock%}
+
+{%block body%}
+<head>
+    <meta http-equiv="refresh" content="1">
+</head>
+<div class="content">
+    <h1>Practice Room {{room_data.id}}</h1>
+    {%if room_data.occupied%}
+    {%set total_secs = elapsed_time.total_seconds()%}
+    {%set hours = (total_secs // 3600) | int%}
+    {%set mins = ((total_secs % 3600)//60) | int %}
+    {%set secs = (total_secs % 60) | int%}
+    <p>Room has been in use for {{hours}} hours {{mins}} minutes and {{secs}} seconds </p>
+    {%else%}
+    <p>Room is not in use.</p>
+    {%endif%}
+    <br/>
+    <a href="/">Back</a>
+</div>
+{%endblock%}

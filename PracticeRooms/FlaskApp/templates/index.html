@@ -1,0 +1,56 @@
+{%extends 'base.html'%}
+{% block head %}
+<title>TNTech Practice Rooms</title>
+{%endblock%}
+
+{%block body%}
+<div class="content">
+    <h1>Select a Room to Change its Availability</h1>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <script>
+                Swal.fire({
+                    title: "Notice",
+                    text: "{{ messages[0] }}",
+                    icon: "success",
+                    confirmButtonText: "OK",
+                    confirmButtonColor: "#4f2984",
+                    color: "#4f2984",
+                    background: "#fff4a9",
+                    iconColor: "#248721",
+                    customClass: {
+                        popup: 'bordered-popup',
+                        confirmButton: 'confirm-button'
+                    }
+                });
+            </script>
+        {% endif %}
+    {% endwith %}
+
+    <table>
+        <tr>
+            <th>Status</th>
+            <th>Room</th>
+            <th>Options</th>
+        </tr>
+        {%for status in rooms%}
+            <tr>
+                <td {% if status.occupied %} class="occupied-design" {%else%} class="vacant-design" {%endif%}>
+                    {% if status.occupied %} Occupied {%else%} Vacant {%endif%}
+                </td>
+                <td>
+                    <form action="/" method="POST">
+                        <input type="hidden" name="room" value="{{ loop.index0}}">
+                        <button type="submit">Room {{loop.index}}</button>
+                    </form>
+                </td>
+                <td>
+                    <a href="/details/room{{loop.index}}">Details</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

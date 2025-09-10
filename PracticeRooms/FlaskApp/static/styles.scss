@@ -1,0 +1,106 @@
+//Color Variables
+
+$tech_purple: #4f2984;
+$tech_gold: #ffdd00;
+$tech_black: #000000;
+$tech_gray: #3f4444;
+$tech_white: #ffffff;
+$tech_gold_pastel: #fff4a9;
+$tech_purple_pastel: #b192dd;
+
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-color: $tech_purple_pastel;
+}
+
+.content{
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: $tech_gold_pastel;
+    border-radius: 10px;
+    box-shadow: 0 0 10px $tech_gray;
+
+    h1{
+        color: $tech_purple;
+        text-align: center;
+    }
+    table{
+        table-layout: fixed;
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    th{
+        padding: 10px;
+        border: 5px solid $tech_purple;
+        background-color: $tech_gold;
+    }
+    td{
+        padding: 10px;
+        border: 5px solid $tech_purple;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    a{
+        display: inline-block;
+        padding: 8px 16px;
+        margin: 5px;
+        border-radius: 20px;
+        background-color: $tech_purple;
+        color: $tech_white;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+
+        &:hover{
+            background-color: $tech_purple_pastel;
+        }
+    }
+
+    button{
+        display: inline-block;
+        padding: 8px 16px;
+        margin: 5px;
+        border-radius: 20px;
+        background-color: $tech_purple;
+        color: $tech_white;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: bold;
+        font-size: 16px;
+        border: none;
+
+        &:hover{
+            background-color: $tech_purple_pastel;
+        }
+    }
+
+    p{
+        text-align: center;
+        font-size: 24px;
+        color: $tech_purple;
+    }
+}
+
+//Table custom colors
+.occupied-design{
+    background-color: lightcoral;
+}
+.vacant-design{
+    background-color: lightgreen;
+}
+
+//Pop-up custom designs
+.bordered-popup{
+    border: 5px solid $tech_purple;
+    border-radius: 10px;
+}
+.confirm-button:hover{
+    background-color: $tech_purple_pastel;
+}
