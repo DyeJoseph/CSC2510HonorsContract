@@ -48,18 +48,11 @@ rooms.append(room9)
 @app.route("/",methods=["POST","GET"])
 def index():
     #Toggle room availability
-    global rooms
+
     if request.method == "POST":
         room_index = int(request.form["room"])
-        #If room is occupied, turn it to vacant
-        if rooms[room_index].occupied:
-            rooms[room_index].occupied = 0
-        #If room is vacant, turn it to occupied and show pop-up
-        else:
-            rooms[room_index].occupied = 1
-            rooms[room_index].in_use = datetime.now(timezone.utc)
-            flash(f"Room {room_index+1} is now in use!")
-            
+        updateRoom(rooms[room_index])
+
     return render_template("index.html", rooms=rooms)
 
 #Details page (shows how long the room has been in use)
@@ -68,6 +61,17 @@ def details(id):
     room_data = rooms[id-1]
     elapsed_time = datetime.now(timezone.utc) - rooms[id-1].in_use
     return render_template('details.html', room_data=room_data, elapsed_time=elapsed_time)
+
+#Function to update room availability
+def updateRoom(room):
+    #If room is occupied, set it to vacant
+    if room.occupied:
+        room.occupied = 0
+    #If room is vacant, set it to occupied and start timer
+    else:
+        room.occupied = 1
+        room.in_use = datetime.now(timezone.utc)
+        flash(f"Room {room.id} is now in use!")
     
 #Run
 if __name__ in "__main__":
