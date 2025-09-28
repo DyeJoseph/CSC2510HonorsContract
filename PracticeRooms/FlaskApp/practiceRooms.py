@@ -21,28 +21,32 @@ class MyRoom(db.Model):
     def __repr__(self) -> str:
         return f"Task {self.id}"
     
-#Array for rooms
-rooms = []
+def createRooms():
+    #Array for rooms
+    rooms = []
 
-#Room initialization and append to array
-room1 = MyRoom(id=1, occupied=0, in_use=datetime.now(timezone.utc))
-rooms.append(room1)
-room2 = MyRoom(id=2, occupied=0, in_use=datetime.now(timezone.utc))
-rooms.append(room2)
-room3 = MyRoom(id=3, occupied=0, in_use=datetime.now(timezone.utc))
-rooms.append(room3)
-room4 = MyRoom(id=4, occupied=0, in_use=datetime.now(timezone.utc))
-rooms.append(room4)
-room5 = MyRoom(id=5, occupied=0, in_use=datetime.now(timezone.utc))
-rooms.append(room5)
-room6 = MyRoom(id=6, occupied=0, in_use=datetime.now(timezone.utc))
-rooms.append(room6)
-room7 = MyRoom(id=7, occupied=0, in_use=datetime.now(timezone.utc))
-rooms.append(room7)
-room8 = MyRoom(id=8, occupied=0, in_use=datetime.now(timezone.utc))
-rooms.append(room8)
-room9 = MyRoom(id=9, occupied=0, in_use=datetime.now(timezone.utc))
-rooms.append(room9)
+    #Room initialization and append to array
+    room1 = MyRoom(id=1, occupied=0, in_use=datetime.now(timezone.utc))
+    rooms.append(room1)
+    room2 = MyRoom(id=2, occupied=0, in_use=datetime.now(timezone.utc))
+    rooms.append(room2)
+    room3 = MyRoom(id=3, occupied=0, in_use=datetime.now(timezone.utc))
+    rooms.append(room3)
+    room4 = MyRoom(id=4, occupied=0, in_use=datetime.now(timezone.utc))
+    rooms.append(room4)
+    room5 = MyRoom(id=5, occupied=0, in_use=datetime.now(timezone.utc))
+    rooms.append(room5)
+    room6 = MyRoom(id=6, occupied=0, in_use=datetime.now(timezone.utc))
+    rooms.append(room6)
+    room7 = MyRoom(id=7, occupied=0, in_use=datetime.now(timezone.utc))
+    rooms.append(room7)
+    room8 = MyRoom(id=8, occupied=0, in_use=datetime.now(timezone.utc))
+    rooms.append(room8)
+    room9 = MyRoom(id=9, occupied=0, in_use=datetime.now(timezone.utc))
+    rooms.append(room9)
+    return rooms
+    
+rooms = createRooms()
 
 #Home page
 @app.route("/",methods=["POST","GET"])
@@ -71,7 +75,7 @@ def updateRoom(room):
     else:
         room.occupied = 1
         room.in_use = datetime.now(timezone.utc)
-        flash(f"Room {room.id} is now in use!")
+        #flash(f"Room {room.id} is now in use!")
     
 #Run
 if __name__ in "__main__":
