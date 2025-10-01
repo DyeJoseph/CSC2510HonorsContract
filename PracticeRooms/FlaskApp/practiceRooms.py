@@ -75,7 +75,9 @@ def updateRoom(room):
     else:
         room.occupied = 1
         room.in_use = datetime.now(timezone.utc)
-        #flash(f"Room {room.id} is now in use!")
+
+        #Comment out the line below this if running tests
+        flash(f"Room {room.id} is now in use!")
     
 #Run
 if __name__ in "__main__":
