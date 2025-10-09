@@ -1,4 +1,4 @@
-from FlaskApp.practiceRooms import MyRoom
+from PracticeRooms.practiceRooms import MyRoom
 from datetime import datetime, timezone
 
 def test_MyRoom():

@@ -1,4 +1,4 @@
-from FlaskApp.practiceRooms import MyRoom, updateRoom
+from PracticeRooms.practiceRooms import MyRoom, updateRoom
 from datetime import datetime, timezone
 from unittest.mock import patch
 
@@ -7,7 +7,7 @@ def test_updateRoom():
     room1 = MyRoom(id=1, occupied=0, in_use=startTime)
 
     fake_now = datetime(2025, 1, 1, 12, 0, 0, tzinfo=timezone.utc)
-    with patch("FlaskApp.practiceRooms.datetime") as mock_datetime:
+    with patch("PracticeRooms.practiceRooms.datetime") as mock_datetime:
         mock_datetime.now.return_value = fake_now
         updateRoom(room1)
         assert room1.id == 1
