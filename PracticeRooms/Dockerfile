@@ -1,4 +1,4 @@
-#start pulling the pythin image
+#start pulling the python image
 FROM python:3.13.7-alpine
 
 #switch working directories

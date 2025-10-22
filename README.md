@@ -17,7 +17,7 @@
 - Type the following lines into the `command terminal` (make sure you are in the directory that `/PracticeRooms` is located in).
     ```
     docker build -t practicerooms-image ./PracticeRooms 
-    docker run -p 5000:5000 practicerooms-image
+    docker run -p 5002:5002 practicerooms-image
     ```
 - This application uses a **Docker Image** to simplify the installation process.
 - Since this is a webapp, go to http://localhost:5000 to access the running Flask application.
