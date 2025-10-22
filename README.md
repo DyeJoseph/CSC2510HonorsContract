@@ -20,7 +20,7 @@
     docker run -p 5002:5002 practicerooms-image
     ```
 - This application uses a **Docker Image** to simplify the installation process.
-- Since this is a webapp, go to http://localhost:5000 to access the running Flask application.
+- Since this is a webapp, go to http://localhost:5002 to access the running Flask application.
 
 ### Webpage
 <hr style="margin-top: 0.1em; margin-bottom: 0.1em;">
