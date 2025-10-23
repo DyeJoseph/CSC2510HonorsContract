@@ -3,9 +3,11 @@ from flask import Flask, render_template, redirect, request, flash
 from flask_scss import Scss
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime, timezone
+from flask_socketio import SocketIO, emit
 
 #My app
 app = Flask(__name__)
+socketio = SocketIO(app)
 app.secret_key = "123456"
 Scss(app)
 
@@ -77,10 +79,11 @@ def updateRoom(room):
         room.in_use = datetime.now(timezone.utc)
 
         #Comment out the line below this if running tests
-        flash(f"Room {room.id} is now in use!")
+        # flash(f"Room {room.id} is now in use!")
+    socketio.emit('refresh')
     
 #Run
 if __name__ in "__main__":
     with app.app_context():
         db.create_all()
-    app.run(host="0.0.0.0", port=5000)
+    socketio.run(app, host="0.0.0.0", port=5000)

@@ -4,10 +4,19 @@
 {%endblock%}
 
 {%block body%}
+{{ super()}}
+<script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.min.js"></script>
+<script>
+  var socket = io();
+  socket.on('refresh', function() {
+    location.reload();
+  });
+</script>
+
 <div class="content">
     <h1>Select a Room to Change its Availability</h1>
 
-    {% with messages = get_flashed_messages() %}
+    <!-- {% with messages = get_flashed_messages() %}
         {% if messages %}
             <script>
                 Swal.fire({
@@ -26,7 +35,7 @@
                 });
             </script>
         {% endif %}
-    {% endwith %}
+    {% endwith %} -->
 
     <table>
         <tr>
