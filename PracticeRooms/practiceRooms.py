@@ -77,7 +77,6 @@ def updateRoom(room):
     else:
         room.occupied = 1
         room.in_use = datetime.now(timezone.utc)
-
         #Comment out the line below this if running tests
         # flash(f"Room {room.id} is now in use!")
     socketio.emit('refresh')
