@@ -16,6 +16,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 #copy every content from the local file to the image
 COPY . .
 
+EXPOSE 8080
+
 #configure the container to run in an executed manner
 ENTRYPOINT [ "python" ]
 
