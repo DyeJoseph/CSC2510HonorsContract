@@ -1,13 +1,9 @@
-import eventlet
-eventlet.monkey_patch()
-
 #Imports
 from flask import Flask, render_template, redirect, request, flash
 from flask_scss import Scss
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime, timezone
 from flask_socketio import SocketIO, emit
-import os
 
 
 #My app
@@ -90,8 +86,4 @@ def updateRoom(room):
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
-<<<<<<< HEAD
-    socketio.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)), debug=True)
-=======
     socketio.run(app, host="0.0.0.0", port=5000)
->>>>>>> parent of 9867173 (Edited port from 5000 to 8080)
