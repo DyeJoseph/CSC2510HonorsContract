@@ -19,6 +19,4 @@ COPY . .
 EXPOSE 8080
 
 #configure the container to run in an executed manner
-ENTRYPOINT [ "python" ]
-
-CMD ["practiceRooms.py"]
+CMD ["python", "practiceRooms.py"]

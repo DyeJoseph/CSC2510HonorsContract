@@ -15,9 +15,7 @@ socketio = SocketIO(app)
 app.secret_key = "123456"
 Scss(app)
 
-# app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
-# app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql+psycopg2://username:password@localhost:5432/dbname"
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 db = SQLAlchemy(app)
 
 #MyRoom class
@@ -77,5 +75,3 @@ if __name__ == "__main__":
         db.create_all()
         createRooms()
     socketio.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)), debug=True)
-    # socketio.run(app, host="0.0.0.0", port=8080)
-    # app.run(host="0.0.0.0", port=8080)
