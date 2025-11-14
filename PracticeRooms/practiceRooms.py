@@ -76,6 +76,6 @@ if __name__ == "__main__":
     with app.app_context():
         db.create_all()
         createRooms()
-    # socketio.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)), debug=True)
-    socketio.run(app, host="0.0.0.0", port=8080)
+    socketio.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)), debug=True)
+    # socketio.run(app, host="0.0.0.0", port=8080)
     # app.run(host="0.0.0.0", port=8080)
