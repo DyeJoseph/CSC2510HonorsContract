@@ -64,8 +64,6 @@ def updateRoom(room):
     else:
         room.occupied = 1
         room.in_use = datetime.now()
-        #Comment out the line below this if running tests
-        # flash(f"Room {room.id} is now in use!")
     db.session.commit()
     socketio.emit('refresh')
     

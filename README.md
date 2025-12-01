@@ -13,7 +13,7 @@
 ### Installation (if run locally)
 <hr style="margin-top: 0.1em; margin-bottom: 0.1em;">
 
-- Download the application [here](http://madeuplink.com).
+- Download the application from GitHub [here](https://github.com/DyeJoseph/CSC2510HonorsContract).
 - Type the following lines into the `command terminal` (make sure you are in the directory that `/PracticeRooms` is located in).
     ```
     docker build -t practicerooms-image ./PracticeRooms 
@@ -25,15 +25,9 @@
 ### Webpage
 <hr style="margin-top: 0.1em; margin-bottom: 0.1em;">
 
-- However, if you do not want to run this locally, a webpage can be found at 
-http://madeuplink.com to access the webapp.
-- This website is hosted through **INSERT NAME HERE** and will likely only be up until **INSERT DATE HERE**.
-
-### Tests
-<hr style="margin-top: 0.1em; margin-bottom: 0.1em;">
-
-- Several tests have been created and included to test the effectiveness of the database (SQLAlchemy).
-- However, I could not figure out how to get the tests to work with [Sweet Alerts](https://sweetalert2.github.io/), which flashes a popup onto the screen when a room is set to be occupied.
-- This means that you will need to comment out (using `#`) line `80` in `practiceRooms.py` when running the tests.
-- To run the tests, simply type `pytest` into the command line (while in the directory this app is in).
-- You will need to run `pip install pytest` as well to install the testing software.
+- If you do not want to run this locally, you can use Google Cloud Platform's (GCP) Cloud Run to run this.
+- Choose **Cloud Run** -> **Create Service**
+- Then select clone the repo from GitHub **Cloud Build** -> **Set up with Cloud Build**
+- For Build Type, choose **Dockerfile** and set the Source location to *PracticeRooms/Dockerfile*
+- Select **Allow Public Access** and set **Maximum number of instances** (1 is fine for testing)
+- Then press **Create**
